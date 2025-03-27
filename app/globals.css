@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 47% 11%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 47% 11%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 47% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 35 100% 50%;
+    --primary-foreground: 220 47% 11%;
+
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 220 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 47% 20%;
+    --input: 223 47% 20%;
+    --ring: 35 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b !important;
+  opacity: 1 !important;
+}
+
+.gold-text {
+  color: #f59e0b;
+  text-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+}
+
+.feature-card {
+  background: linear-gradient(180deg, rgba(59, 82, 125, 0.5) 0%, rgba(59, 82, 125, 0.2) 100%);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.play-button {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.video-container {
+  background: #4285f4;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.discount-badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
