@@ -13,7 +13,7 @@ export default function Portfolio() {
     <section className="w-full py-8 bg-background">
       <div className="container px-4 max-w-md mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-6" data-aos="fade-up">
           <h2 className="text-xl font-bold text-white mb-2">
             نبذة عن بعض أعمالنا
           </h2>
@@ -37,9 +37,13 @@ export default function Portfolio() {
               modules={[Navigation]}
               className="rounded-lg overflow-hidden"
             >
-              {["sales1.jpg", "sales2.jpg", "sales3.jpg","sales4.jpg"].map(
+              {["sales1.jpg", "sales2.jpg", "sales3.jpg", "sales4.jpg"].map(
                 (image, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={`${index * 100}`}
+                  >
                     <Image
                       src={`/images/${image}`}
                       alt={`Sales Image ${index + 1}`}
@@ -92,10 +96,16 @@ export default function Portfolio() {
 
             {/* Navigation Buttons */}
             <div className="flex justify-center mt-4 gap-4">
-              <button className="prev-marketing bg-white rounded-full p-2">
+              <button
+                className="prev-marketing bg-white rounded-full p-2"
+                data-aos="fade-right"
+              >
                 <ChevronLeft className="h-5 w-5 text-gray-700" />
               </button>
-              <button className="next-marketing bg-white rounded-full p-2">
+              <button
+                className="next-marketing bg-white rounded-full p-2"
+                data-aos="fade-left"
+              >
                 <ChevronRight className="h-5 w-5 text-gray-700" />
               </button>
             </div>

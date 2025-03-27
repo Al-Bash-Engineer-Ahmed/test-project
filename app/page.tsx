@@ -8,10 +8,12 @@ import Faq from "@/components/faq"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import CookieConsent from "@/components/cookie-consent"
+import AOSInitializer from "@/components/ui/AOSInitializer"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start bg-background">
+      <AOSInitializer />
       <Hero />
       <Features />
       <Benefits />
@@ -23,6 +25,6 @@ export default function Home() {
       <Footer />
       <CookieConsent />
     </main>
-  )
+  );
 }
 

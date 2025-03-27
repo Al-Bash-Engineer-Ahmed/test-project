@@ -1,10 +1,8 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
@@ -15,7 +13,7 @@ export default function Hero() {
         if (entries[0].isIntersecting) {
           setTimeout(() => {
             setShowVideo(true);
-          }, 2000); // Delay of 1 second before showing video
+          }, 2000);
         }
       },
       { threshold: 0.5 }
@@ -31,7 +29,6 @@ export default function Hero() {
       }
     };
   }, []);
-
 
   return (
     <section className="w-full pt-4 pb-8 bg-background text-center">
@@ -83,12 +80,9 @@ export default function Hero() {
               muted
               playsInline
               loop
-              controls
               className="rounded-xl"
             >
-              <source
-                src="images/video-intro.mp4"
-              />
+              <source src="images/video-intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           ) : (
