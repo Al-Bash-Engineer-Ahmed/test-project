@@ -2,7 +2,6 @@ import type React from "react"
 import "./globals.css"
 import { Tajawal } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
-
 const tajawal = Tajawal({
   subsets: ["arabic"],
   weight: ["400", "500", "700", "800", "900"],
