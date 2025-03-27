@@ -35,15 +35,19 @@ export default function Footer() {
             أنشئ متجرك الآن بأدوات مرنة وحلول متكاملة تساعدك في كل خطوة نحو نمو
             مبيعاتك وتسويق منتجاتك
           </p>
-
-          {/* Call to Action Button */}
-          <Button
-            className="bg-white hover:bg-white/90 text-blue-900 font-bold text-base py-3 px-6 h-auto rounded-full mb-8"
-            data-aos="fade-up"
-            data-aos-delay="300"
+          <a
+            href="https://api.whatsapp.com/send/?phone=966566599744"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            أبدأ الآن
-          </Button>
+            <Button
+              className="bg-white hover:bg-white/90 text-blue-900 font-bold text-base py-3 px-6 h-auto rounded-full mb-8"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              أبدأ الآن
+            </Button>
+          </a>
 
           {/* Services Grid */}
           <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-right w-full mb-8">

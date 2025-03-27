@@ -92,9 +92,16 @@ export default function Benefits() {
         </div>
 
         <div className="flex justify-center" data-aos="flip-up">
-          <Button className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-8 h-auto rounded-full w-full">
-            احجز استشارة الآن
-          </Button>
+          <a
+            href="https://api.whatsapp.com/send/?phone=966566599744"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <Button className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-8 h-auto rounded-full w-full">
+              احجز استشارة الآن
+            </Button>
+          </a>
         </div>
       </div>
     </section>

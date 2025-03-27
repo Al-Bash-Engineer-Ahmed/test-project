@@ -12,7 +12,7 @@ import AOSInitializer from "@/components/ui/AOSInitializer"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start bg-background">
+    <main className="flex min-h-screen flex-col items-center overflow-hidden justify-start bg-background">
       <AOSInitializer />
       <Hero />
       <Features />

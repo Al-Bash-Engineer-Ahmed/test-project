@@ -38,15 +38,6 @@ export default function Hero() {
           className="flex justify-between items-center mb-8"
           data-aos="fade-down"
         >
-          <div className="discount-badge text-white text-sm">
-            خصم 15% عند استخدام كود 5852318
-          </div>
-          <Button
-            variant="secondary"
-            className="bg-gray-500/20 hover:bg-gray-500/30 text-white text-sm py-1 px-4 h-auto rounded-md"
-          >
-            ابدأ الآن
-          </Button>
         </div>
 
         {/* Main Heading */}
