@@ -14,56 +14,56 @@ const salesData = [
     title: "المبيعات",
     icon: "📈",
     metrics: [
-      { label: "إجمالي المبيعات", value: "120,255 رس", percentage: "40.25%" },
-      { label: "تكاليف المنتجات", value: "90,000 رس", percentage: "35.50%" },
-      { label: "كوبونات التخفيض", value: "5,000 رس", percentage: "5.00%" },
-      { label: "الشحن", value: "10,255 رس", percentage: "8.50%" },
-      { label: "الضرائب", value: "8,500 رس", percentage: "7.10%" },
-      { label: "رسوم الدفع", value: "6,500 رس", percentage: "5.40%" },
-      { label: "صافي المبيعات", value: "100,000 رس", percentage: "38.20%" },
-      { label: "الطلبات", value: "45,000 رس", percentage: "25.00%" },
+      { label: "إجمالي المبيعات", value: "101,585.3 رس", percentage: "100%" },
+      { label: "تكاليف المنتجات", value: "-45,480 رس", percentage: "100%" },
+      { label: "كوبونات التخفيض", value: "-1,325.7 رس", percentage: "100%" },
+      { label: "الشحن", value: "-25 رس", percentage: "100%" },
+      { label: "الضرائب", value: "-", percentage: "-" },
+      { label: "رسوم الدفع", value: "-578,14 رس", percentage: "100%" },
+      { label: "صافي المبيعات", value: "55,504.16 رس", percentage: "100%" },
+      { label: "الطلبات", value: "281 طلب", percentage: "100%" },
     ],
   },
   {
     title: "المبيعات",
     icon: "📊",
     metrics: [
-      { label: "إجمالي المبيعات", value: "95,600 رس", percentage: "30.10%" },
-      { label: "تكاليف المنتجات", value: "75,000 رس", percentage: "28.30%" },
-      { label: "كوبونات التخفيض", value: "3,200 رس", percentage: "3.40%" },
-      { label: "الشحن", value: "8,900 رس", percentage: "7.50%" },
-      { label: "الضرائب", value: "6,800 رس", percentage: "6.00%" },
-      { label: "رسوم الدفع", value: "4,700 رس", percentage: "4.10%" },
-      { label: "صافي المبيعات", value: "80,000 رس", percentage: "30.20%" },
-      { label: "الطلبات", value: "38,500 رس", percentage: "22.50%" },
+      { label: "إجمالي المبيعات", value: "979,626.59 رس", percentage: "100%" },
+      { label: "تكاليف المنتجات", value: "-213,337.5 رس", percentage: "100%" },
+      { label: "كوبونات التخفيض", value: "-68,210.69 رس", percentage: "100%" },
+      { label: "الشحن", value: "-44,426 رس", percentage: "100%" },
+      { label: "الضرائب", value: "-", percentage: "-" },
+      { label: "رسوم الدفع", value: "-12,409.38 رس", percentage: "100%" },
+      { label: "صافي المبيعات", value: "727,453.71 رس", percentage: "100%" },
+      { label: "الطلبات", value: "8,105 طلب", percentage: "100%" },
     ],
   },
   {
     title: "المبيعات",
     icon: "📉",
     metrics: [
-      { label: "إجمالي المبيعات", value: "110,400 رس", percentage: "38.00%" },
-      { label: "تكاليف المنتجات", value: "88,500 رس", percentage: "33.50%" },
-      { label: "كوبونات التخفيض", value: "4,500 رس", percentage: "4.90%" },
-      { label: "الشحن", value: "9,200 رس", percentage: "7.80%" },
-      { label: "الضرائب", value: "7,100 رس", percentage: "6.50%" },
-      { label: "رسوم الدفع", value: "5,200 رس", percentage: "4.80%" },
-      { label: "صافي المبيعات", value: "90,500 رس", percentage: "35.00%" },
-      { label: "الطلبات", value: "41,200 رس", percentage: "23.80%" },
+      { label: "إجمالي المبيعات", value: "101,997 رس", percentage: "7.01%" },
+      { label: "تكاليف المنتجات", value: "-22,807.5 رس", percentage: "9.25%" },
+      { label: "كوبونات التخفيض", value: "-14,893 رس", percentage: "5.22%" },
+      { label: "الشحن", value: "-6,288 رس", percentage: "2.99%" },
+      { label: "الضرائب", value: "-", percentage: "-" },
+      { label: "رسوم الدفع", value: "-1,474.27 رس", percentage: "6.03%" },
+      { label: "صافي المبيعات", value: "71,427.23 رس", percentage: "6.85%" },
+      { label: "الطلبات", value: "921 طلب", percentage: "3.96%" },
     ],
   },
   {
     title: "المبيعات",
     icon: "📈",
     metrics: [
-      { label: "إجمالي المبيعات", value: "130,700 رس", percentage: "42.80%" },
-      { label: "تكاليف المنتجات", value: "105,600 رس", percentage: "37.20%" },
-      { label: "كوبونات التخفيض", value: "6,300 رس", percentage: "5.80%" },
-      { label: "الشحن", value: "11,400 رس", percentage: "9.00%" },
-      { label: "الضرائب", value: "9,300 رس", percentage: "7.50%" },
-      { label: "رسوم الدفع", value: "7,000 رس", percentage: "6.20%" },
-      { label: "صافي المبيعات", value: "110,500 رس", percentage: "40.00%" },
-      { label: "الطلبات", value: "48,700 رس", percentage: "26.50%" },
+      { label: "إجمالي المبيعات", value: "103,018.65 رس", percentage: "17.21%" },
+      { label: "تكاليف المنتجات", value: "-16,384 رس", percentage: "25.18%" },
+      { label: "كوبونات التخفيض", value: "-839,62 رس", percentage: "14.67%" },
+      { label: "الشحن", value: "-", percentage: "-" },
+      { label: "الضرائب", value: "-", percentage: "-" },
+      { label: "رسوم الدفع", value: "-5,351.61 رس", percentage: "20.42%" },
+      { label: "صافي المبيعات", value: "81,283.04 رس", percentage: "22.31%" },
+      { label: "الطلبات", value: "4,330 طلب", percentage: "16.75%" },
     ],
   },
 ];
@@ -119,7 +119,7 @@ export default function Portfolio() {
                           </thead>
                           <tbody>
                             {card.metrics.map((metric, i) => (
-                              <tr key={i} className="border-b">
+                              <tr key={i} className="border-b font-bold">
                                 <td className="py-2 text-gray-500">
                                   {metric.percentage}
                                 </td>
@@ -135,8 +135,16 @@ export default function Portfolio() {
                         </table>
                       </div>
                       <div className="absolute bottom-0 w-full">
-                        <img className="absolute bottom-0 w-full" src="/images/Vector 4.png" alt="Vector" />
-                        <img className="absolute bottom-0 w-full" src="/images/Vector 3.png" alt="Vector" />
+                        <img
+                          className="absolute bottom-0 w-full"
+                          src="/images/Vector 4.png"
+                          alt="Vector"
+                        />
+                        <img
+                          className="absolute bottom-0 w-full"
+                          src="/images/Vector 3.png"
+                          alt="Vector"
+                        />
                       </div>
                     </CardContent>
                   </Card>
