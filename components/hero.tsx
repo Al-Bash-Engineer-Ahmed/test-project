@@ -111,9 +111,9 @@ export default function Hero() {
           position: relative;
           display: inline-block;
           padding: 10px 20px;
-          color: white;
           font-size: 2rem;
           font-weight: bold;
+          color: white;
           text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
           background: transparent;
         }
@@ -121,23 +121,28 @@ export default function Hero() {
         .border-animate::before {
           content: "";
           position: absolute;
-          top: -8px;
-          left: -8px;
-          right: -8px;
-          bottom: -8px;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
           border-radius: 12px;
-          padding: 4px;
           background: linear-gradient(
             45deg,
-            #ffd733,
+            #ffffff,
             #f59e0b,
             #ffffff,
             #f59e0b
           );
-          background-size: 300% 300%;
+          background-size: 200% 200%;
           animation: gradientMove 3s linear infinite;
           z-index: -1;
-          clip-path: inset(0 round 12px);
+          mask: linear-gradient(white 0 0) content-box,
+            linear-gradient(white 0 0);
+          -webkit-mask: linear-gradient(white 0 0) content-box,
+            linear-gradient(white 0 0);
+          mask-composite: exclude;
+          -webkit-mask-composite: destination-out;
+          padding: 2px;
         }
 
         @keyframes gradientMove {
