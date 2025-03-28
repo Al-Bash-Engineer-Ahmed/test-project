@@ -43,9 +43,6 @@ export default function Contact() {
           {/* Contact Form */}
           <form className="space-y-4" data-aos="fade-up">
             <div className="space-y-2" data-aos="fade-left">
-              <label htmlFor="name" className="sr-only">
-                الاسم
-              </label>
               <Input
                 id="name"
                 name="name"
