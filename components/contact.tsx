@@ -34,7 +34,6 @@ export default function Contact() {
                 <Instagram className="h-6 w-6 text-pink-600 font-extrabold" />
               </div>
             </div>
-            <h3 className="text-xl font-extrabold text-white">الاسم</h3>
             <div className="bg-white rounded-full p-2 shadow-md">
               <MessageSquare className="h-6 w-6 text-blue-500 font-extrabold" />
             </div>
@@ -43,6 +42,9 @@ export default function Contact() {
           {/* Contact Form */}
           <form className="space-y-4" data-aos="fade-up">
             <div className="space-y-2" data-aos="fade-left">
+              <label htmlFor="service" className="sr-only">
+                الاسم
+              </label>
               <Input
                 id="name"
                 name="name"
