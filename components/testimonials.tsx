@@ -1,90 +1,76 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Notifications() {
   const allMessages = [
     {
       id: 1,
-      title: "Message",
-      message: "Your store has a new order for 1 item totaling $19.99",
+      title: "سلة",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 19.99 دولارًا",
+      pathImage: "/images/message.jpg",
     },
     {
       id: 2,
-      title: "Shopify",
-      message: "Your store has a new order for 1 item totaling $39.89",
+      title: "شوبيفاي",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 39.89 دولارًا",
+      pathImage: "/images/shopify.png",
     },
     {
       id: 3,
-      title: "Message",
-      message: "Your store has a new order for 1 item totaling $24.99",
+      title: "سلة",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 24.99 دولارًا",
+      pathImage: "/images/message.jpg",
     },
     {
       id: 4,
-      title: "Shopify",
-      message: "Your store has a new order for 1 item totaling $49.99",
+      title: "شوبيفاي",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 49.99 دولارًا",
+      pathImage: "/images/shopify.png",
     },
     {
       id: 5,
-      title: "Message",
-      message: "Your store has a new order for 1 item totaling $59.97",
+      title: "سلة",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 59.97 دولارًا",
+      pathImage: "/images/message.jpg",
     },
     {
       id: 6,
-      title: "Shopify",
-      message: "Your store has a new order for 1 item totaling $34.99",
+      title: "شوبيفاي",
+      message: "متجرك لديه طلب جديد لعنصر واحد بإجمالي 34.99 دولارًا",
+      pathImage: "/images/shopify.png",
     },
   ];
 
-  const imagePaths = [
-    "/images/message.jpg",
-    "/images/shopify.png",
-    "/images/message.jpg",
-    "/images/shopify.png",
-    "/images/message.jpg",
-    "/images/shopify.png",
-  ];
-
-  const [notifications, setNotifications] = useState<
-    {
-      id: number;
-      message: string;
-      time: number;
-      title: string;
-      pathImage: string;
-    }[]
-  >([]);
-
-  const indexRef = useRef(0); // Keeps index value across re-renders
+  const [notifications, setNotifications] = useState([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const currentTime = Date.now();
-
-      setNotifications((prev) => {
-        const newIndex = indexRef.current % allMessages.length;
-        const imageIndex = Math.floor(Math.random() * imagePaths.length); // Random image selection
-
-        const newNotification = {
-          id: currentTime,
-          title: allMessages[newIndex].title,
-          pathImage: imagePaths[imageIndex], // Randomly assigned image
-          message: allMessages[newIndex].message,
-          time: currentTime,
-        };
-
-        indexRef.current += 1;
-
-        return [
-          newNotification,
-          ...prev.map((n) => ({ ...n, time: n.time - 60000 })),
-        ].slice(0, 5);
-      });
+      setIndex((prevIndex) => (prevIndex + 1) % allMessages.length);
     }, 2000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const currentTime = Date.now();
+    const newNotification = {
+      id: currentTime,
+      title: allMessages[index].title,
+      pathImage: allMessages[index].pathImage,
+      message: allMessages[index].message,
+      time: currentTime,
+    };
+
+    setNotifications((prev) =>
+      [
+        newNotification,
+        ...prev.map((n) => ({ ...n, time: n.time - 60000 })),
+      ].slice(0, 5)
+    );
+  }, [index]);
 
   return (
     <section className="w-full flex justify-center items-start py-8 bg-background">
@@ -92,18 +78,16 @@ export default function Notifications() {
         {notifications.map((notification, i) => {
           const minutesAgo =
             i === 0
-              ? "Just now"
+              ? "الآن"
               : `${Math.abs(
                   Math.floor((Date.now() - notification.time) / 60000)
-                )}m ago`;
+                )} دقيقة مضت`;
 
           return (
             <div
               key={notification.id}
               className="opacity-0 translate-y-[-10px] animate-slideIn w-full"
-              style={{
-                animation: "slideIn 0.4s ease-in-out forwards",
-              }}
+              style={{ animation: "slideIn 0.4s ease-in-out forwards" }}
             >
               <Card className="bg-gray-900/80 border border-gray-700 rounded-xl shadow-lg">
                 <CardContent className="p-4 flex items-center gap-3">
@@ -114,18 +98,20 @@ export default function Notifications() {
                       alt={notification.title}
                     />
                   </div>
-                  <div className="text-left w-full flex justify-between">
-                    <div>
+                  <div className="text-right w-full flex flex-col justify-between">
+                    <div className="flex p-2 justify-between">
                       <p className="text-white font-semibold">
                         {notification.title}
                       </p>
+                      <p className="text-gray-400 text-xs whitespace-nowrap">
+                        {minutesAgo}
+                      </p>
+                    </div>
+                    <div>
                       <p className="text-gray-300 text-sm">
                         {notification.message}
                       </p>
                     </div>
-                    <p className="text-gray-400 text-xs whitespace-nowrap">
-                      {minutesAgo}
-                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -134,7 +120,6 @@ export default function Notifications() {
         })}
       </div>
 
-      {/* Embedded CSS for animation */}
       <style jsx>{`
         @keyframes slideIn {
           0% {

@@ -37,29 +37,35 @@ export default function Hero() {
         <div
           className="flex justify-between items-center mb-8"
           data-aos="fade-down"
-        >
-        </div>
+        ></div>
 
         {/* Main Heading */}
         <div className="space-y-4 mb-8" data-aos="fade-up">
           <h1 className="text-3xl font-bold gold-text leading-tight">
-            ويز - منصتك الذكية للخدمات!
+            مع ويز.. أنت الربحان!
           </h1>
           <p className="text-white text-lg font-medium leading-relaxed">
-            اكتشف واطلب خدمات متنوعة بسهولة وسرعة، وكن دائمًا متقدمًا
+            هل تريد تحقيق أقصى استفادة من ميزانيتك الإعلانية؟ ويز تقدم لك حلولًا
+            احترافية في الميديا باينج وإدارة الحسابات، مما يضمن لك وصولًا دقيقًا
+            لجمهورك المستهدف وزيادة مبيعاتك بذكاء!
           </p>
           <p className="text-white/80 text-base">
             وفر وقتك وجهدك مع ويز - كل ما تحتاجه من خدمات في مكان واحد!
           </p>
         </div>
 
-        {/* CTA Button */}
-        <Button
-          className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-8 h-auto rounded-full w-full mb-8"
-          data-aos="zoom-in"
-        >
-          ابدأ الآن مجانًا
-        </Button>
+        <div className="flex justify-center" data-aos="flip-up">
+          <a
+            href="https://api.whatsapp.com/send/?phone=966566599744"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full"
+          >
+            <Button className="bg-gold hover:bg-gold/90 mb-4 text-background font-bold text-lg py-6 px-8 h-auto rounded-xl w-full">
+              احجز استشارة الآن
+            </Button>
+          </a>
+        </div>
 
         {/* Video Section */}
         <div className="video-container mb-8" ref={videoRef} data-aos="fade-up">

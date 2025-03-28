@@ -30,7 +30,7 @@ export default function Guarantee() {
               data-aos-delay="200"
             >
               <div className="h-4 w-4 rounded-full bg-background mt-1 flex-shrink-0"></div>
-              <p className="text-background text-base">
+              <p className="text-background font-bold text-base">
                 تقدر تسترد 50% من فلوسك إذا ما حققت هدف الباقة
               </p>
             </div>
@@ -42,20 +42,24 @@ export default function Guarantee() {
               data-aos-delay="300"
             >
               <div className="h-4 w-4 rounded-full bg-background mt-1 flex-shrink-0"></div>
-              <p className="text-background text-base">
+              <p className="text-background font-bold text-base">
                 لأننا نثق بقدرات فريق العمل وندرك أن مخاوفك تزيد يوم بعد يوم
               </p>
             </div>
           </div>
 
-          {/* Call-to-Action Button */}
-          <Button
-            className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-8 h-auto rounded-full w-full mt-4"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            احجز استشارة الآن
-          </Button>
+          <div className="flex w-full justify-center" data-aos="flip-up">
+            <a
+              href="https://api.whatsapp.com/send/?phone=966566599744"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Button className="bg-gold hover:bg-gold/90 text-background font-extrabold text-lg py-6 px-8 h-auto  rounded-xl w-full">
+                احجز استشارة الآن
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>

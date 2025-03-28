@@ -98,7 +98,7 @@ export default function Benefits() {
             rel="noopener noreferrer"
             className="w-full"
           >
-            <Button className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-8 h-auto rounded-full w-full">
+            <Button className="bg-gold hover:bg-gold/90 text-background font-extrabold text-lg py-6 px-8 h-auto  rounded-xl w-full">
               احجز استشارة الآن
             </Button>
           </a>
