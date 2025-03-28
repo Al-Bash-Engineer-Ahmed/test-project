@@ -1,7 +1,8 @@
 "use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +10,8 @@ import { Navigation } from "swiper/modules";
 import Image from "next/image";
 
 export default function Portfolio() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="w-full py-8 bg-background">
       <div className="container px-4 max-w-md mx-auto">
@@ -37,20 +40,21 @@ export default function Portfolio() {
               modules={[Navigation]}
               className="rounded-lg overflow-hidden"
             >
-              {["sales1.jpg", "sales2.jpg", "sales3.jpg", "sales4.jpg"].map(
+              {["sales1.png", "sales2.png", "sales3.png", "sales4.jpg"].map(
                 (image, index) => (
-                  <SwiperSlide
-                    key={index}
-                    data-aos="fade-up"
-                    data-aos-delay={`${index * 100}`}
-                  >
-                    <Image
-                      src={`/images/${image}`}
-                      alt={`Sales Image ${index + 1}`}
-                      width={500}
-                      height={300}
-                      className="rounded-lg object-cover w-full"
-                    />
+                  <SwiperSlide key={index}>
+                    <div
+                      className="cursor-pointer"
+                      onClick={() => setSelectedImage(`/images/${image}`)}
+                    >
+                      <Image
+                        src={`/images/${image}`}
+                        alt={`Sales Image ${index + 1}`}
+                        width={500}
+                        height={400}
+                        className="rounded-lg object-cover w-full h-[400px]"
+                      />
+                    </div>
                   </SwiperSlide>
                 )
               )}
@@ -66,90 +70,33 @@ export default function Portfolio() {
               </button>
             </div>
           </TabsContent>
-
-          {/* Marketing Slider */}
-          <TabsContent value="marketing">
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={1}
-              navigation={{
-                nextEl: ".next-marketing",
-                prevEl: ".prev-marketing",
-              }}
-              modules={[Navigation]}
-              className="rounded-lg overflow-hidden"
-            >
-              {["marketing1.jpg", "marketing2.jpg", "marketing3.jpg"].map(
-                (image, index) => (
-                  <SwiperSlide key={index}>
-                    <Image
-                      src={`/images/${image}`}
-                      alt={`Marketing Image ${index + 1}`}
-                      width={500}
-                      height={300}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </SwiperSlide>
-                )
-              )}
-            </Swiper>
-
-            {/* Navigation Buttons */}
-            <div className="flex justify-center mt-4 gap-4">
-              <button
-                className="prev-marketing bg-white rounded-full p-2"
-                data-aos="fade-right"
-              >
-                <ChevronLeft className="h-5 w-5 text-gray-700" />
-              </button>
-              <button
-                className="next-marketing bg-white rounded-full p-2"
-                data-aos="fade-left"
-              >
-                <ChevronRight className="h-5 w-5 text-gray-700" />
-              </button>
-            </div>
-          </TabsContent>
-
-          {/* Design Slider */}
-          <TabsContent value="design">
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={1}
-              navigation={{
-                nextEl: ".next-design",
-                prevEl: ".prev-design",
-              }}
-              modules={[Navigation]}
-              className="rounded-lg overflow-hidden"
-            >
-              {["design1.jpg", "design2.jpg", "design3.jpg"].map(
-                (image, index) => (
-                  <SwiperSlide key={index}>
-                    <Image
-                      src={`/images/${image}`}
-                      alt={`Design Image ${index + 1}`}
-                      width={500}
-                      height={300}
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </SwiperSlide>
-                )
-              )}
-            </Swiper>
-
-            {/* Navigation Buttons */}
-            <div className="flex justify-center mt-4 gap-4">
-              <button className="prev-design bg-white rounded-full p-2">
-                <ChevronLeft className="h-5 w-5 text-gray-700" />
-              </button>
-              <button className="next-design bg-white rounded-full p-2">
-                <ChevronRight className="h-5 w-5 text-gray-700" />
-              </button>
-            </div>
-          </TabsContent>
         </Tabs>
       </div>
+
+      {/* Fullscreen Image Preview */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          onClick={() => setSelectedImage(null)}
+          data-aos="fade-in"
+        >
+          <div className="relative w-auto max-w-lg">
+            <button
+              className="absolute top-2 left-2 text-white bg-gray-700 p-1 rounded-full"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <Image
+              src={selectedImage}
+              alt="Preview"
+              width={600}
+              height={600}
+              className="rounded-lg object-contain max-h-[80vh]"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

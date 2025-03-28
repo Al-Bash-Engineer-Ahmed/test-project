@@ -7,7 +7,6 @@ import Guarantee from "@/components/guarantee"
 import Faq from "@/components/faq"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import CookieConsent from "@/components/cookie-consent"
 import AOSInitializer from "@/components/ui/AOSInitializer"
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
       <Faq />
       <Contact />
       <Footer />
-      <CookieConsent />
     </main>
   );
 }

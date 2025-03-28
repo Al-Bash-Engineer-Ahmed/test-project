@@ -1,36 +1,81 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Notifications() {
   const allMessages = [
-    { id: 1, message: "Your store has a new order for 1 item totaling $19.99" },
-    { id: 2, message: "Your store has a new order for 1 item totaling $39.89" },
-    { id: 3, message: "Your store has a new order for 1 item totaling $24.99" },
-    { id: 4, message: "Your store has a new order for 1 item totaling $49.99" },
-    { id: 5, message: "Your store has a new order for 1 item totaling $59.97" },
-    { id: 6, message: "Your store has a new order for 1 item totaling $34.99" },
+    {
+      id: 1,
+      title: "Message",
+      message: "Your store has a new order for 1 item totaling $19.99",
+    },
+    {
+      id: 2,
+      title: "Shopify",
+      message: "Your store has a new order for 1 item totaling $39.89",
+    },
+    {
+      id: 3,
+      title: "Message",
+      message: "Your store has a new order for 1 item totaling $24.99",
+    },
+    {
+      id: 4,
+      title: "Shopify",
+      message: "Your store has a new order for 1 item totaling $49.99",
+    },
+    {
+      id: 5,
+      title: "Message",
+      message: "Your store has a new order for 1 item totaling $59.97",
+    },
+    {
+      id: 6,
+      title: "Shopify",
+      message: "Your store has a new order for 1 item totaling $34.99",
+    },
+  ];
+
+  const imagePaths = [
+    "/images/message.jpg",
+    "/images/shopify.png",
+    "/images/message.jpg",
+    "/images/shopify.png",
+    "/images/message.jpg",
+    "/images/shopify.png",
   ];
 
   const [notifications, setNotifications] = useState<
-    { id: number; message: string; time: number }[]
+    {
+      id: number;
+      message: string;
+      time: number;
+      title: string;
+      pathImage: string;
+    }[]
   >([]);
-  let index = 0;
+
+  const indexRef = useRef(0); // Keeps index value across re-renders
 
   useEffect(() => {
     const interval = setInterval(() => {
       const currentTime = Date.now();
 
       setNotifications((prev) => {
+        const newIndex = indexRef.current % allMessages.length;
+        const imageIndex = Math.floor(Math.random() * imagePaths.length); // Random image selection
+
         const newNotification = {
           id: currentTime,
-          message: allMessages[index % allMessages.length].message,
-          time: currentTime, // Store timestamp
+          title: allMessages[newIndex].title,
+          pathImage: imagePaths[imageIndex], // Randomly assigned image
+          message: allMessages[newIndex].message,
+          time: currentTime,
         };
-        index++;
 
-        // Update previous notifications' time
+        indexRef.current += 1;
+
         return [
           newNotification,
           ...prev.map((n) => ({ ...n, time: n.time - 60000 })),
@@ -64,14 +109,16 @@ export default function Notifications() {
                 <CardContent className="p-4 flex items-center gap-3">
                   <div className="bg-white rounded-lg flex-shrink-0">
                     <img
-                      src="/images/message.jpg"
+                      src={notification.pathImage}
                       className="h-10 w-10 rounded-lg"
-                      alt="message"
+                      alt={notification.title}
                     />
                   </div>
                   <div className="text-left w-full flex justify-between">
                     <div>
-                      <p className="text-white font-semibold">Shopify</p>
+                      <p className="text-white font-semibold">
+                        {notification.title}
+                      </p>
                       <p className="text-gray-300 text-sm">
                         {notification.message}
                       </p>

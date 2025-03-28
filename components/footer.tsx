@@ -52,23 +52,46 @@ export default function Footer() {
           {/* Services Grid */}
           <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-right w-full mb-8">
             {[
-              "إدارة المشاريع",
-              "تحسين محركات البحث",
-              "تصاميم السوشيال ميديا",
-              "خدمة إدخال البيانات",
-              "إدارة محتوى وسائل التواصل",
-              "إنتاج وإخراج الإعلانات",
-              "إدارة المتاجر الإلكترونية",
-              "تصميم وبرمجة التطبيقات",
+              {
+                name: "إدارة المشاريع",
+                link: "https://www.wizfreelance.com/services/إدارة-المشاريع",
+              },
+              {
+                name: "تحسين محركات البحث",
+                link: "https://www.wizfreelance.com/services/تحسين-محركات-البحث",
+              },
+              {
+                name: "تصاميم السوشيال ميديا",
+                link: "https://www.wizfreelance.com/services/تصاميم-السوشيال-ميديا",
+              },
+              {
+                name: "خدمة إدخال البيانات",
+                link: "https://www.wizfreelance.com/services/خدمة-ادخال-البيانات",
+              },
+              {
+                name: "إدارة محتوى وسائل التواصل",
+                link: "https://www.wizfreelance.com/services/إدارة-محتوى-وسائل-التواصل",
+              },
+              {
+                name: "إدارة المتاجر الإلكترونية",
+                link: "https://www.wizfreelance.com/services/إدارة-المتاجر-الإلكترونية",
+              },
+              {
+                name: "تصميم وبرمجة التطبيقات",
+                link: "https://www.wizfreelance.com/services/تصميم-وبرمجة-التطبيقات",
+              },
             ].map((service, index) => (
-              <h3
+              <a
                 key={index}
+                href={service.link}
                 className="text-white text-sm font-medium"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {service}
-              </h3>
+                {service.name}
+              </a>
             ))}
           </div>
 
@@ -84,8 +107,6 @@ export default function Footer() {
             <div className="flex">
               <Button
                 className="bg-blue-900 hover:bg-blue-800 text-white h-10 px-3"
-                data-aos="fade-left"
-                data-aos-delay="500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,10 +128,8 @@ export default function Footer() {
                 name="email"
                 type="email"
                 placeholder="البريد الإلكتروني"
-                className="flex-1 bg-white text-right h-10"
+                className="flex-1 bg-white text-right h-10 mx-2"
                 autoComplete="email"
-                data-aos="fade-right"
-                data-aos-delay="500"
                 required
               />
             </div>
@@ -118,8 +137,6 @@ export default function Footer() {
 
           <div
             className="mt-6 text-white/50 text-xs"
-            data-aos="fade-up"
-            data-aos-delay="600"
           ></div>
         </div>
       </div>
