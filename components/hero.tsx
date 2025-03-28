@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
@@ -33,38 +34,39 @@ export default function Hero() {
   return (
     <section className="w-full pt-4 pb-8 bg-background text-center">
       <div className="container px-4 max-w-md mx-auto">
-        {/* Discount Badge */}
-        <div
-          className="flex justify-between items-center mb-8"
-          data-aos="fade-down"
-        ></div>
-
-        {/* Main Heading */}
-        <div className="space-y-4 mb-8" data-aos="fade-up">
-          <h1 className="text-3xl font-bold gold-text leading-tight">
-            مع ويز.. أنت الربحان!
-          </h1>
-          <p className="text-white text-lg font-medium leading-relaxed">
-            هل تريد تحقيق أقصى استفادة من ميزانيتك الإعلانية؟ ويز تقدم لك حلولًا
-            احترافية في الميديا باينج وإدارة الحسابات، مما يضمن لك وصولًا دقيقًا
-            لجمهورك المستهدف وزيادة مبيعاتك بذكاء!
-          </p>
-          <p className="text-white/80 text-base">
-            وفر وقتك وجهدك مع ويز - كل ما تحتاجه من خدمات في مكان واحد!
-          </p>
-        </div>
-
-        <div className="flex justify-center" data-aos="flip-up">
+        {/* Logo & Booking Button */}
+        <div className="flex items-center justify-between p-4 rounded-2xl mb-6 bg-transparent">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={60}
+            height={50}
+            className="rounded-lg"
+          />
           <a
             href="https://api.whatsapp.com/send/?phone=966566599744"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full"
           >
-            <Button className="bg-gold hover:bg-gold/90 mb-4 text-background font-bold text-lg py-6 px-8 h-auto rounded-xl w-full">
-              احجز استشارة الآن
+            <Button className="bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6 px-6 rounded-lg">
+              احجز استشارتك الآن
             </Button>
           </a>
+        </div>
+
+        {/* Main Heading with Animated Border */}
+        <div className="space-y-4 mb-8" data-aos="fade-up">
+          <h1 className="border-animate text-3xl font-bold leading-tight">
+            مع ويز.. أنت الربحان!
+          </h1>
+          <p className="text-white text-md font-normal leading-relaxed">
+            هل تريد تحقيق أقصى استفادة من ميزانيتك الإعلانية؟ ويز تقدم لك حلولًا
+            احترافية في الميديا باينج وإدارة الحسابات، مما يضمن لك وصولًا دقيقًا
+            لجمهورك المستهدف وزيادة مبيعاتك بذكاء!
+          </p>
+          <p className="text-white/80 text-sm">
+            وفر وقتك وجهدك مع ويز - كل ما تحتاجه من خدمات في مكان واحد!
+          </p>
         </div>
 
         {/* Video Section */}
@@ -100,6 +102,56 @@ export default function Hero() {
           )}
         </div>
       </div>
+
+      {/* Styles */}
+      <style jsx>{`
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+        .border-animate {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: white;
+          font-size: 2rem;
+          font-weight: bold;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+          background: transparent;
+        }
+
+        .border-animate::before {
+          content: "";
+          position: absolute;
+          top: -8px;
+          left: -8px;
+          right: -8px;
+          bottom: -8px;
+          border-radius: 12px;
+          padding: 4px;
+          background: linear-gradient(
+            45deg,
+            #ffd733,
+            #f59e0b,
+            #ffffff,
+            #f59e0b
+          );
+          background-size: 300% 300%;
+          animation: gradientMove 3s linear infinite;
+          z-index: -1;
+          clip-path: inset(0 round 12px);
+        }
+
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </section>
   );
 }
